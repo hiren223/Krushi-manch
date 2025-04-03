@@ -4,7 +4,12 @@ session_start();
 session_unset();
 session_destroy();
 
-header("location: ../krushi-manch/login/login.php");
+echo "
+<script> 
+window.location.href = 'http://localhost/krushi-manch/login/login.php';
+</script>
+";
+    
 exit;
 
 ?>

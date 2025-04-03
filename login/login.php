@@ -44,9 +44,7 @@ $email = $_POST['email'];
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
 </head>
-
 <body>
-
         <div class="container">
       <!-- Left Side - Signup Form -->
       <div class="signup-section">

@@ -23,7 +23,6 @@ body {
 .container {
     display: flex;
     flex-direction: row-reverse;
-    height: 70vh;
     width: 70%;
     max-width: 1200px;
     background: var(--color);
