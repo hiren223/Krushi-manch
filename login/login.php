@@ -41,10 +41,12 @@ $email = $_POST['email'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In - Krushi Manch</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php include '../partials/nav.php'?>
+
         <div class="container">
       <!-- Left Side - Signup Form -->
       <div class="signup-section">

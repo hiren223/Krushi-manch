@@ -1,4 +1,5 @@
 <?php
+
     if (isset($_SESSION['Loggedin']) && ($_SESSION['Loggedin'] == true)) {
         $loggedin=true;
     }
@@ -7,15 +8,13 @@
     }
 
     echo '
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <title>Krushi Manch</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="shortcut icon" href="/test website/image/K.jpg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +40,7 @@
      echo '   </ul>';
 
      echo '  <div class="dropdown">
-    <i class="ri-user-line dropbtn"></i>
+    <i class="ri-user-line dropbtn"> </i>
     <div class="dropdown-content">';
        if (!$loggedin) {
         echo ' <a class="nav-link" href="http://localhost/krushi-manch/login/login.php">Login</a>                      
@@ -49,7 +48,7 @@
                         ';
     }
        if ($loggedin) {
-        echo    ' <a class="nav-link" href="/Loginsystem/logout.php">logout</a>           
+        echo    ' <a class="nav-link" href="/krushi-manch/login/login.php">logout</a>           
                              ';
     }
     echo '
@@ -75,4 +74,4 @@ echo '
 </script>
 
 </html>
-'; ?>
+'?>

@@ -13,6 +13,7 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Krushi Manch</title>
 </head>
 
@@ -29,9 +30,7 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
                     <p>Explore our comprensive resources, connect with follw farmers, and grow your expertise.
                        <br> Discover expert trip, market trends, and tools to enhance your farming journey.🌱🌾
                     </p>
-                    <button><a href="./regitration/signup.php">Register</a></button>
-
-                    <button><a href="./login/login.php">Login</a></button>
+                    
                 </div>
             </div>
     </section>
