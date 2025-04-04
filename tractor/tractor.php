@@ -31,7 +31,7 @@ if ($conn->connect_error) {
     <!-- start navbar -->
     <nav>
         <div class="logo">
-            <img src="tractor-image/Krushi_Manch.png" alt="#">
+            <img src="./tractor-image/Krushi_Manch.png" alt="#">
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
@@ -42,38 +42,43 @@ if ($conn->connect_error) {
             <li><a href="#category">Category</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <li><a href="http://localhost/krushi-manch/tractor/from/index.html"><i class="ri-upload-2-fill">Upload</i></a></li>
+            <li><a href="/from/index.html"><i class="ri-upload-2-fill">Upload</i></a></li>
         </ul>
     </nav>
 
     <!-- Start Service Page -->
-<section id="category">
-    <h1>Category</h1>
-    <div class="service">
-        <?php 
-        $sql = "SELECT * FROM `trector-rent`";
-        $result = mysqli_query($conn, $sql);
-        while ($row = mysqli_fetch_assoc($result)) { 
+<div class="service">
+    <?php
+    $sql = "SELECT * FROM `trector-rent`";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $frontImage = $row['front_image'];
+        $leftImage = $row['left_image'];
+        $rightImage = $row['right_image'];
+        $backImage = $row['back_image'];
         ?>
         <div class="service-card">
             <a href="#">
                 <div class="slider-container">
                     <div class="slides-wrapper">
-                        <div class="slide"><img src="<?php echo $row['front_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['left_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['right_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['back_image']; ?>"></div>
+                       
+                        <div class="slide"><img src="<?php echo $frontImage;  ?>" alt="Front Image"></div>
+                        <div class="slide"><img src="<?php echo $leftImage; ?>" alt="Left Image"></div>
+                        <div class="slide"><img src="<?php echo $rightImage; ?>" alt="Right Image"></div>
+                        <div class="slide"><img src="<?php echo $backImage; ?>" alt="Back Image"></div>
                     </div>
-                </div> 
+                </div>
                 <br><br>
                 <h3><?php echo $row['vehicle name']; ?></h3>
                 <button><a href="/Rental service/tractor/tractor details/index.html">More details</a></button>
             </a>
         </div>
-        <?php 
-        } 
-        ?>
-    </div>
+    <?php
+    }
+    ?>
+</div>
+
+
 </section>
 
 

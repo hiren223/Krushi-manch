@@ -8,55 +8,55 @@
 </head>
 <body>
 <div class="container">
-    <form action="insert.php" method="post" enctype="multipart/form-data">
+    <form action="rentfrom.php" method="post" enctype="multipart/form-data">
     <h2>Rental Vehicle Form</h2>
 
     <div class="form-group">
         <label>Full Name:</label>
-        <input type="text" name="name" placeholder="Enter your full name" required="required">
+        <input type="text" name="name" placeholder="Enter your full name" required>
     </div>
     
     <div class="form-group">
         <label>Phone Number:</label>
-        <input type="number" name="phone" placeholder="Enter your phone number" max="10" required="required">
+        <input type="number" name="phone" placeholder="Enter your phone number" required>
     </div>
     
     <div class="form-group">
         <label>Rental Duration (days):</label>
-        <input type="number" name="rent_days" placeholder="Enter rental duration" required="required">
+        <input type="number" name="rent_days" placeholder="Enter rental duration" required>
     </div>
 
     <div class="form-group">
         <label>Rental Price/days:</label>
-        <input type="number" name="rent_price" placeholder="Enter rental duration" required="required">
+        <input type="number" name="rent_price" placeholder="Enter rental duration" required>
     </div>
 
     <div class="form-group">
         <label>Location:</label>
-        <input type="text" name="location" placeholder="Enter location" required="required">
+        <input type="text" name="location" placeholder="Enter location" required>
     </div>
 
     <div class="form-group">
         <label>Vehicle Name:</label>
-        <input type="text" name="vehicle" placeholder="Enter vehicle name" required="required">
+        <input type="text" name="vehicle" placeholder="Enter vehicle name" required>
     </div>
 
     <div class="grid-container">
         <div class="form-group">
             <label>Front Side:</label>
-            <input type="file" name="front" required="required">
+            <input type="file" name="front" required>
         </div>
         <div class="form-group">
             <label>Left Side:</label>
-            <input type="file" name="left" required="required">
+            <input type="file" name="left" required>
         </div>
         <div class="form-group">
             <label>Right Side:</label>
-            <input type="file" name="right" required="required">
+            <input type="file" name="right" required>
         </div>
         <div class="form-group">
             <label>Back Side:</label>
-            <input type="file" name="back" required="required">
+            <input type="file" name="back" required>
         </div>
     </div>
     <button name="submit" id="button">Submit</button>

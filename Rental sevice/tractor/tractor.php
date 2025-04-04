@@ -31,7 +31,7 @@ if ($conn->connect_error) {
     <!-- start navbar -->
     <nav>
         <div class="logo">
-            <img src="image/Krushi_Manch.png" alt="#">
+            <img src="./tractor-image/Krushi_Manch.png" alt="#">
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
@@ -42,7 +42,7 @@ if ($conn->connect_error) {
             <li><a href="#category">Category</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <li><a href="http://localhost/krushi-manch/Rental%20sevice/tractor/tractor%20details/from/index.html"><i class="ri-upload-2-fill">Upload</i></a></li>
+            <li><a href="/from/index.html"><i class="ri-upload-2-fill">Upload</i></a></li>
         </ul>
     </nav>
 
@@ -59,14 +59,14 @@ if ($conn->connect_error) {
             <a href="#">
                 <div class="slider-container">
                     <div class="slides-wrapper">
-                        <div class="slide"><img src="<?php echo $row['front_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['left_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['right_image']; ?>"></div>
-                        <div class="slide"><img src="<?php echo $row['back_image']; ?>"></div>
+                        <div class="slide"><img src="<?= $row['front'] ?>"></div>
+                        <div class="slide"><img src="<?= $row['left']?>"></div>
+                        <div class="slide"><img src="<?= $row['right'] ?>"></div>
+                        <div class="slide"><img src="<?= $row['back']?>"></div>
                     </div>
                 </div> 
                 <br><br>
-                <h3><?php echo $row['vehicle name']; ?></h3>
+                <h3><?= $row['vehicle-name'] ?></h3>
                 <button><a href="/Rental service/tractor/tractor details/index.html">More details</a></button>
             </a>
         </div>

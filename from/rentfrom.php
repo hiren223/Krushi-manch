@@ -44,25 +44,20 @@ if ($conn->connect_error) {
     move_uploaded_file($rimage_tamp, $right);
     move_uploaded_file($bimage_tamp, $back);
 
-   $sql = "INSERT INTO `trector-rent` (`name`, `number`, `rent_days`, `rent_price`, `location`, `vehicle name`, `front_image`, `left_image`, `right_image`, `back_image`) VALUES ('$name', '$phone','$rentdays', '$rentprice', '$location', '$vehicle', '$front', '$left', '$right', '$back')";
+   $sql = "INSERT INTO `trector-rent` (`name`, `number`, `rent_days`, `rent_price`, `location`, `vehicle-name`, `front`,`right`,  `left` , `back`) VALUES ('$name', '$phone','$rentdays', '$rentprice', '$location', '$vehicle', '$front', '$right', '$left', '$back')";
    $result = mysqli_query($conn, $sql);
 
     if($result){
         echo ' <script>
-        Swal.fire({
-  title: "You vehicle add for rent successfully!",
-  text: "thank you for joining us",
-  icon: "success"
-}) </script>';
+        alert("Vehicle added for rent successfully!");
+        window.location.href=tractor.php;
+        </script>';
     }
     else{
         echo ' <script>
-        Swal.fire({
-  icon: "error",
-  title: "Error!",
-  text: " you vehicle not add for rent",
-  footer: "Please try again"
-}) </script>';
+        alert("Vehicle not added for rent successfully!");
+        window.location.href=tractor.php;
+        </script>';
     }
 }
 
