@@ -496,6 +496,7 @@ footer {
     border-radius: 50px;
     padding: 0.3vw;
     animation: fadeInDown 1s ease;
+    cursor: pointer;
 }
 
 .left-side span {
@@ -520,6 +521,9 @@ footer {
     font-size: 25px;
     line-height: 2;
     animation: fadeInLeft 1s ease;
+}
+.right-side a{
+    text-decoration: none;
 }
 
 .right-side i {

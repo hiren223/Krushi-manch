@@ -25,7 +25,7 @@
     <!-- Satrt Navbar -->
     <nav>
         <div class="logo">
-            <img src="image/Krushi_Manch.png" alt="#">
+            <img src="login/Krushi_Manch.png" alt="#">
         </div>';
         if ($loggedin) {
             echo'
@@ -43,7 +43,7 @@
         }
 
      echo '  <div class="dropdown">
-    <i class="ri-user-line dropbtn"> </i>
+    <i class="ri-user-line dropbtn"></i>
     <div class="dropdown-content">';
        if (!$loggedin) {
         echo ' <a class="nav-link" href="http://localhost/krushi-manch/login/login.php">Login</a>                      

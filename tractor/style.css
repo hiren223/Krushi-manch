@@ -76,7 +76,7 @@ nav ul li a {
     position: relative;
     transition: all 0.3s ease;
 }
-nav> ul> li> a> i{
+nav ul li a i{
     color: var(--color);
         text-decoration: none;
         font-size: 18px;
@@ -85,6 +85,7 @@ nav> ul> li> a> i{
         border-radius: 5px;
         letter-spacing: 1px;
         position: relative;
+            font-family: 'Poppins', sans-serif !important; 
 }
 
 .text li a::after {
@@ -248,7 +249,7 @@ nav .menu-btn i {
 
     nav ul li {
         width: 100%;
-        margin: 40px 0;
+        margin: 30px 0;
     }
 
     nav ul li a {

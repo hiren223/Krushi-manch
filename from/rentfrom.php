@@ -34,10 +34,10 @@ if ($conn->connect_error) {
 
 
 
-   $front = 'image/' . $frimage;
-   $left = 'image/' . $leimage;
-   $right = 'image/' . $riimage;
-   $back = 'image/' . $baimage;
+   $front = './images/' . $frimage;
+   $left = './images/' . $leimage;
+   $right = './images/' . $riimage;
+   $back = './images/' . $baimage;
 
     move_uploaded_file($fimage_tamp, $front);
     move_uploaded_file($limage_tamp, $left);
@@ -50,13 +50,13 @@ if ($conn->connect_error) {
     if($result){
         echo ' <script>
         alert("Vehicle added for rent successfully!");
-        window.location.href=tractor.php;
+        window.location.href= /krushi-manch/tractor/tractor.php;
         </script>';
     }
     else{
         echo ' <script>
         alert("Vehicle not added for rent successfully!");
-        window.location.href=tractor.php;
+        window.location.href= /krushi-manch/tractor/tractor.php;
         </script>';
     }
 }

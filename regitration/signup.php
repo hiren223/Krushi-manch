@@ -36,6 +36,15 @@
 
 ?>
 
+<?php 
+if (isset($_SESSION['Loggedin']) && ($_SESSION['Loggedin'] == true)) {
+        $loggedin=true;
+    }
+    else{
+        $loggedin=false;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,13 +53,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="signup.css" />
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 <title>Registration - Krushi Manch</title>
 </head>
 
 <body>    
     <?php
-    require '../partials/nav.php';
-    ?>
+        echo '<nav>
+        <div class="logo">
+            <img src="./Krushi_Manch.png" alt="#">
+        </div>';
+
+
+     echo '  <div class="dropdown">
+    <i class="ri-user-line dropbtn"></i>
+    <div class="dropdown-content">';
+       if (!$loggedin) {
+        echo ' <a class="nav-link" href="http://localhost/krushi-manch/login/login.php">Login</a>                      
+                            <a class="nav-link" href="http://localhost/krushi-manch/regitration/signup.php">singup</a>
+                        ';
+    }
+       if ($loggedin) {
+        echo    ' <a class="nav-link" href="/krushi-manch/login/login.php">logout</a>           
+                             ';
+    }
+    echo '
+    </div>
+</div>';
+echo '
+    </nav>';
+?>
 
      <div class="container">
       <!-- Left Side - Signup Form -->

@@ -6,6 +6,26 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
 }
 ?>
 
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "krushi-manch";
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if (isset($_POST['submit'])) {
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $message = $_POST['message'];
+
+   $sql = "INSERT INTO `message` (`name`, `email`, `message`) VALUES ('$name', '$email','$message ')";
+   $result = mysqli_query($conn, $sql);
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +34,8 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
       <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <title>Krushi Manch</title>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <title>Krushi Manch</title>
 </head>
 
 <body>
@@ -145,7 +166,7 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
                 <p>If you have any work from our team or any types of quries related to Our services, you can send a
                     message from
                     here. It's Our pleasure to help you.</p> <br>
-                <form action="insert.php" method="post">
+                <form action="welcome.php" method="post">
                     <div class="input-box">
                         <input type="text" placeholder="Enter your name" name="name" required>
                     </div> <br>
@@ -182,18 +203,35 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
                 <div class="text">
                     Our company provide all farming service such as Market Place to sell goods,<br>Rental Equipment
                     service,Real Time Communication for Farmers,EMI Calculator,etc.
-                </div>
-                <i class="ri-whatsapp-line"></i>
-                <i class="ri-facebook-fill"></i>
-                <i class="ri-instagram-line"></i>
-                <i class="ri-twitter-x-line"></i>
+                </div> 
+                <a href="#"><i class="ri-whatsapp-line"></i></a>
+                <a href="#"><i class="ri-telegram-2-line"></i></a>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
             </div>
         </div>
         <div class="copy"><span>Copyright © 2025 krushi manch, All Rights Reserved</span>
         </div>
     </footer>
     <!-- Close Footer -->
-
+<?php 
+ if ($result) {
+      echo '<script>
+        Swal.fire({
+            title: "Your message sent successfully",
+            text: "thank you for message",
+            icon: "success"
+            }) </script>';
+   } else {
+      echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Your message not sent",
+                }) </script>';
+   }
+?>
 </body>
 
 <script>

@@ -38,11 +38,11 @@ if ($conn->connect_error) {
             <i class="fas fa-bars"></i>
         </label>
         <ul class="text">
-            <li><a class="active" href="/Rental sevice/index.html">Home</a></li>
+            <li><a class="active" href="/krushi-manch/Rental sevice/index.html">Home</a></li>
             <li><a href="#category">Category</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <li><a href="/from/index.html"><i class="ri-upload-2-fill">Upload</i></a></li>
+            <li><a href="/krushi-manch/from/index.html"><i class="ri-upload-cloud-2-line">Upload</i></a></li>
         </ul>
     </nav>
 
@@ -52,24 +52,24 @@ if ($conn->connect_error) {
     $sql = "SELECT * FROM `trector-rent`";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
-        $frontImage = $row['front_image'];
-        $leftImage = $row['left_image'];
-        $rightImage = $row['right_image'];
-        $backImage = $row['back_image'];
+        $frontImage = $row['front'];
+        $leftImage = $row['left'];
+        $rightImage = $row['right'];
+        $backImage = $row['back'];
         ?>
         <div class="service-card">
             <a href="#">
                 <div class="slider-container">
                     <div class="slides-wrapper">
                        
-                        <div class="slide"><img src="<?php echo $frontImage;  ?>" alt="Front Image"></div>
+                        <div class="slide"><img src="<?php  echo $frontimage ?>" alt="Front Image"></div>
                         <div class="slide"><img src="<?php echo $leftImage; ?>" alt="Left Image"></div>
                         <div class="slide"><img src="<?php echo $rightImage; ?>" alt="Right Image"></div>
                         <div class="slide"><img src="<?php echo $backImage; ?>" alt="Back Image"></div>
                     </div>
                 </div>
                 <br><br>
-                <h3><?php echo $row['vehicle name']; ?></h3>
+                <h3><?php echo $row['vehicle-name']; ?></h3>
                 <button><a href="/Rental service/tractor/tractor details/index.html">More details</a></button>
             </a>
         </div>
@@ -77,94 +77,7 @@ if ($conn->connect_error) {
     }
     ?>
 </div>
-
-
 </section>
-
-
-            
-               
-            <!-- <div class="service-card">
-                <a href="#">
-                    <div class="slider-container">
-                        <div class="slides-wrapper">
-                            <div class="slide"><img src="/Rental sevice/tractor/image/Mahindra_575.png"
-                                    alt="Mahindra 575"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/mahindra-575-di-leftside.png"
-                                    alt="Mahindra 575"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/Mahindra_575.png"
-                                    alt="Mahindra 575"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/mahindra-575-di-leftside.png"
-                                    alt="Mahindra 575"></div>
-                        </div>
-                    </div><br><br><br>
-                    <h3>Mahindra 575 (2wd)</h3>
-                    <button> <a href="#">More details</a></button>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="#">
-                    <div class="slider-container">
-                        <div class="slides-wrapper">
-                            <div class="slide"><img src="/Rental sevice/tractor/image/MF-1035.png"
-                                    alt="Messey ferguson 1035 Di"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/MF-1035.png"
-                                    alt="Messey ferguson 1035 Di"></div>
-                        </div>
-                    </div>
-                    <h3>Massey Ferguson 1035 Di (2wd)</h3>
-                    <button> <a href="#">More details</a></button>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="#">
-                    <div class="slider-container">
-                        <div class="slides-wrapper">
-                            <div class="slide"><img src="/Rental sevice/tractor/image/new-holland-3630.png"
-                                    alt="New Holland 3630"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/New_Holland_3630_leftangle.png"
-                                    alt="New Holland 3630"></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/holland-3630-tx.png"
-                                    alt="New Holland 3630"></div>
-                        </div><br><br><br><br><br>
-                    </div>
-                    <h3>New Holland 3630 (2wd)</h3>
-                    <button> <a href="#">More details</a></button>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="#">
-                    <div class="slider-container">
-                        <div class="slides-wrapper">
-                            <div class="slide"><img src="/Rental sevice/tractor/image/Powertrac_eure.png"
-                                    alt="Powertrac Eruo "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/powertrac-euro.png"
-                                    alt="Powertrac Eruo "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/powertrac-Euro-Front.png"
-                                    alt="Powertrac Eruo "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/powertrac-euro-backangle.png"
-                                    alt="Powertrac Eruo "></div>
-                        </div>
-                    </div> 
-                    <h3>Powertrac Euro (4wd)</h3>
-                    <button> <a href="#">More details</a></button>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="#">
-                    <div class="slider-container">
-                        <div class="slides-wrapper">
-                            <div class="slide"><img src="/Rental sevice/tractor/image/swaraj_855FE.png" alt="Swaraj 855 FE "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/Swaraj_855 FE_right.png" alt="Swaraj 855 FE "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/swaraj_855FE.png" alt="Swaraj 855 FE "></div>
-                            <div class="slide"><img src="/Rental sevice/tractor/image/Swaraj_855 FE_right.png" alt="Swaraj 855 FE ">
-                            </div>
-                        </div><br><br><br>
-                    </div>
-                    <h3>Swaraj 855 FE</h3>
-                    <button> <a href="#">More details</a></button>
-                </a>
-            </div> -->
     <!-- close Service Page -->
 </body>
 <script>
