@@ -48,7 +48,9 @@
 </head>
 
 <body>    
-   <?php include '../partials/nav.php'?>
+    <?php
+    require '../partials/nav.php';
+    ?>
 
      <div class="container">
       <!-- Left Side - Signup Form -->

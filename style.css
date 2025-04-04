@@ -115,9 +115,9 @@ input[type="checkbox"] {
 
 /* Dropdown button */
 .dropbtn {
-    /* color: white; */
+    color: white;
     padding: 5px ;
-    font-size: 16px;
+    font-size: 1.5rem;
     border-radius: 50px;
     cursor: pointer;
 }
@@ -127,8 +127,7 @@ input[type="checkbox"] {
     display: none;
     position: absolute;
     background-color: white;
-    
-    min-width: 100px;
+    min-width: 100px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
@@ -223,10 +222,10 @@ input[type="checkbox"] {
 
 /* start services page */
 .service {
-    padding: 60px 10px;
+    padding: 50px 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 20px;
     background-color: var(--color);
     cursor: pointer;
     height: calc(100% - 70px);
@@ -493,7 +492,7 @@ footer {
     color: var(--bg-color2);
     font-size: 20px;
     line-height: 2;
-    border: 1.5px solid var(--hover-color);
+    background: var(--hover-color) !important;
     border-radius: 50px;
     padding: 0.3vw;
     animation: fadeInDown 1s ease;
@@ -528,7 +527,7 @@ footer {
     font-size: 1.5rem;
     padding: 0.3vw;
     margin: 0.2rem;
-    border: 1.5px solid var(--hover-color);
+    background: var(--hover-color) !important;
     border-radius: 50px;
     line-height: 3;
     cursor: pointer;

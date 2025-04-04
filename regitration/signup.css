@@ -253,6 +253,12 @@
       .container {
           flex-direction: column-reverse;
           width: 100%;
+            margin: 50px auto;
+                position: absolute;
+                top: 43%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
       }
 
       .signup-section {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" href="/test website/image/K.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Rental Service</title>
+</head>
+
+<body>
+    <!-- start navbar -->
+    <nav>
+        <div class="logo">
+            <img src="./rental-image/Krushi_Manch.png" alt="#">
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="text">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#category">Category</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- close navbar -->
+
+    <!-- start home section -->
+    <section id="home">
+        
+    </section>
+    <!-- close home section -->
+
+    <!-- start category section -->
+    <section id="category">
+        <h2>Category</h2>
+        <div class="parent">
+            <a href="./tractor/tractor.php">
+                <div class="div1 category-card">
+                    <img src="./rental-image/tractor.png" alt="Tractors">
+                    <h3>Tractors</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div2 category-card">
+                    <img src="./rental-image/combine-harvester.png" alt="Combine harvester">
+                    <h3>Combine harvester</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div3 category-card">
+                    <img src="./rental-image/plough.png" alt="Plough">
+                    <h3>Plough</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div4 category-card">
+                    <img src="./rental-image/Fertilizer spreaders.png" alt="Fertilizer spreaders">
+                    <h3>Fertilizer spreaders</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div5 category-card">
+                    <img src="./rental-image/Cotton picker.png" alt="Cotton Picker">
+                    <h3>Cotton picker</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div6 category-card">
+                    <img src="./rental-image/Rotavator.png" alt="Rotavator">
+                    <h3>Rotavator</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div7 category-card">
+                    <img src="./rental-image/Cultivator.png" alt="Cultivator">
+                    <h3>Cultivator</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div8 category-card">
+                    <img src="./rental-image/Balers.png" alt="Balers">
+                    <h3>Balers</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div9 category-card">
+                    <img src="./rental-image/Potato planter.png" alt="Potato Planter">
+                    <h3>Potato Planter</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="div10 category-card">
+                    <img src="./rental-image/Harrow.png" alt="Harrow">
+                    <h3>Harrow</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- close category section -->
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll("nav ul.text li a");
+        const checkbox = document.getElementById("click");
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                checkbox.checked = false; // Uncheck the checkbox to close menu
+            });
+        });
+    });
+    
+</script>
+
+</html>

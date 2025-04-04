@@ -116,7 +116,7 @@ input[type="checkbox"] {
 
 /* Dropdown button */
 .dropbtn {
- color: var(--color);
+ color: var(--color) !important;
     padding: 5px;
     font-size: 16px;
     border-radius: 50px;

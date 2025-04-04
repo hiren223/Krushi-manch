@@ -45,7 +45,9 @@ $email = $_POST['email'];
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <?php include '../partials/nav.php'?>
+ <?php
+    require '../partials/nav.php';
+    ?>
 
         <div class="container">
       <!-- Left Side - Signup Form -->

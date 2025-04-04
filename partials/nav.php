@@ -26,18 +26,21 @@
     <nav>
         <div class="logo">
             <img src="image/Krushi_Manch.png" alt="#">
-        </div>
+        </div>';
+        if ($loggedin) {
+            echo'
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
             <i class="fas fa-bars"></i>
         </label>
-        <ul class="text">
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#service">Services</a></li>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>';
-
-     echo '   </ul>';
+            <ul class="text">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+    
+          </ul>';
+        }
 
      echo '  <div class="dropdown">
     <i class="ri-user-line dropbtn"> </i>
@@ -74,4 +77,4 @@ echo '
 </script>
 
 </html>
-'?>
+' ?>

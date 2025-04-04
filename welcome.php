@@ -72,14 +72,14 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
                 </a>
             </div>
             <div class="service-card">
-                <a href="Rental sevice/index.html">
+                <a href="./Rental sevice/index.html">
                     <img src="image/Rental -service.jpg" alt="Rental service">
                     <h3>Rental service</h3>
                     <p>All farming equipments are available on rent.</p>
                 </a>
             </div>
             <div class="service-card">
-                <a href="/EMI calculator/index.html">
+                <a href="./EMI calculator/index.html">
                     <img src="image/EMI-Calculator.jpg" alt="EMI Calculator">
                     <h3>EMI Calculator</h3>
                     <p>Loan application and EMI calculators for farmers to purchase equipment or seeds.</p>
