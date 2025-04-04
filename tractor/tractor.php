@@ -62,10 +62,10 @@ if ($conn->connect_error) {
                 <div class="slider-container">
                     <div class="slides-wrapper">
                        
-                        <div class="slide"><img src="<?php  echo $frontimage ?>" alt="Front Image"></div>
-                        <div class="slide"><img src="<?php echo $leftImage; ?>" alt="Left Image"></div>
-                        <div class="slide"><img src="<?php echo $rightImage; ?>" alt="Right Image"></div>
-                        <div class="slide"><img src="<?php echo $backImage; ?>" alt="Back Image"></div>
+                      <div class="slide"><img src="<?php echo htmlspecialchars($frontImage); ?>" alt="Front Image"></div>
+<div class="slide"><img src="<?php echo htmlspecialchars($leftImage); ?>" alt="Left Image"></div>
+<div class="slide"><img src="<?php echo htmlspecialchars($rightImage); ?>" alt="Right Image"></div>
+<div class="slide"><img src="<?php echo htmlspecialchars($backImage); ?>" alt="Back Image"></div>
                     </div>
                 </div>
                 <br><br>

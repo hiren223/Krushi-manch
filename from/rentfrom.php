@@ -1,65 +1,71 @@
 <?php
- 
- $servername ="localhost";
- $username="root";
- $password="";
- $database="krushi-manch";
-
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "krushi-manch";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
- if (isset($_POST['submit'])) {
-   $name = $_POST['name'];
-  $phone = $_POST['phone'];
-   $rentdays = $_POST['rent_days'];
-   $rentprice = $_POST['rent_price'];
-   $location = $_POST['location'];
-   $vehicle = $_POST['vehicle'];
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $rentdays = $_POST['rent_days'];
+    $rentprice = $_POST['rent_price'];
+    $location = $_POST['location'];
+    $vehicle = $_POST['vehicle'];
+    $power = $_POST['power'];
+    $type = $_POST['type'];
 
-   $fimage_tamp = $_FILES['front']['tmp_name'];
-   $frimage = $_FILES['front']['name'];
-   
-   $limage_tamp = $_FILES['left']['tmp_name'];
-   $leimage = $_FILES['left']['name'];
-   
-   $rimage_tamp = $_FILES['right']['tmp_name'];
-   $riimage = $_FILES['right']['name'];
-   
-   $bimage_tamp = $_FILES['back']['tmp_name'];
-   $baimage = $_FILES['back']['name'];
+    // File uploads
+    $front = $left = $right = $back = "";
 
-
-
-   $front = './images/' . $frimage;
-   $left = './images/' . $leimage;
-   $right = './images/' . $riimage;
-   $back = './images/' . $baimage;
-
-    move_uploaded_file($fimage_tamp, $front);
-    move_uploaded_file($limage_tamp, $left);
-    move_uploaded_file($rimage_tamp, $right);
-    move_uploaded_file($bimage_tamp, $back);
-
-   $sql = "INSERT INTO `trector-rent` (`name`, `number`, `rent_days`, `rent_price`, `location`, `vehicle-name`, `front`,`right`,  `left` , `back`) VALUES ('$name', '$phone','$rentdays', '$rentprice', '$location', '$vehicle', '$front', '$right', '$left', '$back')";
-   $result = mysqli_query($conn, $sql);
-
-    if($result){
-        echo ' <script>
-        alert("Vehicle added for rent successfully!");
-        window.location.href= /krushi-manch/tractor/tractor.php;
-        </script>';
+    if (!empty($_FILES['front']['name'])) {
+        $frimage = $_FILES['front']['name'];
+        $fimage_tmp = $_FILES['front']['tmp_name'];
+        $front = 'images/' . $frimage;
+        move_uploaded_file($fimage_tmp, $front);
     }
-    else{
-        echo ' <script>
-        alert("Vehicle not added for rent successfully!");
-        window.location.href= /krushi-manch/tractor/tractor.php;
+
+    if (!empty($_FILES['left']['name'])) {
+        $leimage = $_FILES['left']['name'];
+        $limage_tmp = $_FILES['left']['tmp_name'];
+        $left = 'images/' . $leimage;
+        move_uploaded_file($limage_tmp, $left);
+    }
+
+    if (!empty($_FILES['right']['name'])) {
+        $riimage = $_FILES['right']['name'];
+        $rimage_tmp = $_FILES['right']['tmp_name'];
+        $right = 'images/' . $riimage;
+        move_uploaded_file($rimage_tmp, $right);
+    }
+
+    if (!empty($_FILES['back']['name'])) {
+        $baimage = $_FILES['back']['name'];
+        $bimage_tmp = $_FILES['back']['tmp_name'];
+        $back = 'images/' . $baimage;
+        move_uploaded_file($bimage_tmp, $back);
+    }
+
+    // Corrected SQL Query (No Duplicate Columns)
+    $sql = "INSERT INTO `trector-rent` (`name`, `number`, `power`, `type`, `rent_days`, `rent_price`, `location`, `vehicle-name`, `front`, `right`, `left`, `back`)
+            VALUES ('$name', '$phone', '$power', '$type', '$rentdays', '$rentprice', '$location', '$vehicle', '$front', '$right', '$left', '$back')";
+            $result = mysqli_query($conn, $sql);
+    if ($result) {
+        echo '<script>
+        alert("Equipment added for rent successfully!");
+        window.location.href = "/krushi-manch/tractor/tractor.php";
+        </script>';
+    } else {
+        echo '<script>
+        alert("Equipment not added for rent successfully! Error: ' . mysqli_error($conn) . '");
+        window.location.href = "/krushi-manch/tractor/tractor.php";
         </script>';
     }
 }
-
-
 ?>

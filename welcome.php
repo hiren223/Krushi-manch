@@ -16,15 +16,15 @@ $database = "krushi-manch";
 $conn = mysqli_connect($servername, $username, $password, $database);
 
 if (isset($_POST['submit'])) {
-   $name = $_POST['name'];
-   $email = $_POST['email'];
-   $message = $_POST['message'];
-
-   $sql = "INSERT INTO `message` (`name`, `email`, `message`) VALUES ('$name', '$email','$message ')";
-   $result = mysqli_query($conn, $sql);
-
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    $sql = "INSERT INTO `message` (`name`, `email`, `message`) VALUES ('$name', '$email','$message ')";
+    $result = mysqli_query($conn, $sql);
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
