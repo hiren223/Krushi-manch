@@ -12,7 +12,7 @@ $email = $_POST['email'];
     //  $hash = password_hash($password, PASSWORD_DEFAULT);
 
     // $sql = "Select * From `user` Where username='$username' AND password='$password'";
-    $sql = "Select * From `user` Where username='$username' AND phoneNo='$phone'";
+    $sql = "Select * From `user` Where Username='$username' AND phoneNo='$phone'";
     $result = mysqli_query($conn,$sql);
     $num = mysqli_num_rows($result);
     if ($num == 1) {

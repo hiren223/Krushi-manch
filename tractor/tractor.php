@@ -40,42 +40,34 @@ if ($conn->connect_error) {
         <ul class="text">
             <li><a class="active" href="/krushi-manch/Rental sevice/index.html">Home</a></li>
             <li><a href="#category">Category</a></li>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
             <li><a href="/krushi-manch/from/index.html"><i class="ri-upload-cloud-2-line">Upload</i></a></li>
         </ul>
     </nav>
 
     <!-- Start Service Page -->
 <div class="service">
-    <?php
-    $sql = "SELECT * FROM `trector-rent`";
-    $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_assoc($result)) {
-        $frontImage = $row['front'];
-        $leftImage = $row['left'];
-        $rightImage = $row['right'];
-        $backImage = $row['back'];
-        ?>
-        <div class="service-card">
-            <a href="#">
-                <div class="slider-container">
-                    <div class="slides-wrapper">
-                       
-                      <div class="slide"><img src="<?php echo htmlspecialchars($frontImage); ?>" alt="Front Image"></div>
-<div class="slide"><img src="<?php echo htmlspecialchars($leftImage); ?>" alt="Left Image"></div>
-<div class="slide"><img src="<?php echo htmlspecialchars($rightImage); ?>" alt="Right Image"></div>
-<div class="slide"><img src="<?php echo htmlspecialchars($backImage); ?>" alt="Back Image"></div>
-                    </div>
-                </div>
-                <br><br>
-                <h3><?php echo $row['vehicle-name']; ?></h3>
-                <button><a href="/Rental service/tractor/tractor details/index.html">More details</a></button>
-            </a>
-        </div>
-    <?php
-    }
+   <?php
+$sql = "SELECT * FROM `trector-rent`";
+$result = mysqli_query($conn, $sql);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $vehicleName = htmlspecialchars($row['vehicle-name']);
     ?>
+    
+    <div class="service-card">
+        <div class="slider-container">
+            <div class="slides-wrapper">
+                <div class="slide"><img src="../from/<?php echo $row['front']; ?>" alt="<?php echo $vehicleName; ?>"></div>
+                <div class="slide"><img src="../from/<?php echo $row['left']; ?>" alt="<?php echo $vehicleName; ?>"></div>
+                <div class="slide"><img src="../from/<?php echo $row['right']; ?>" alt="<?php echo $vehicleName; ?>"></div>
+                <div class="slide"><img src="../from/<?php echo $row['back']; ?>" alt="<?php echo $vehicleName; ?>"></div>
+            </div>
+        </div>
+        <h3><?php echo $vehicleName; ?></h3>
+        <a href="/Rental service/tractor/tractor details/index.html"><button>More details</button></a>
+    </div>
+
+<?php } ?>
 </div>
 </section>
     <!-- close Service Page -->

@@ -12,7 +12,7 @@
     
     $exists = false;
     
-    $existSql = "SELECT * FROM `user` WHERE username='$username'";
+    $existSql = "SELECT * FROM `user` WHERE Username='$username'";
     $result = mysqli_query($conn, $existSql);
     $numExistRows = mysqli_num_rows($result);
     if($numExistRows > 0){
@@ -21,7 +21,7 @@
     else{
         if(($password == $cpassword)){
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO `user` ( `username`,`email`, `phoneNo`, `password`, `date`) VALUES ('$username',  '$email', '$phone', '$hash', current_timestamp())";
+            $sql = "INSERT INTO `user` ( `Username`,`email`, `phoneNo`, `password`, `date`) VALUES ('$username',  '$email', '$phone', '$hash', current_timestamp())";
             
             $result = mysqli_query($conn, $sql);
             if($result){

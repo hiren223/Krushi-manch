@@ -6,25 +6,6 @@ if (!isset($_SESSION['Loggedin']) || ($_SESSION['Loggedin'] != true)) {
 }
 ?>
 
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "krushi-manch";
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-    
-    $sql = "INSERT INTO `message` (`name`, `email`, `message`) VALUES ('$name', '$email','$message ')";
-    $result = mysqli_query($conn, $sql);
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +136,39 @@ if (isset($_POST['submit'])) {
     <!-- close About Page -->
 
     <!-- Start Contact Page -->
+    <?php
+include './partials/_dbconnect.php';
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $stmt = $conn->prepare("INSERT INTO `message` (`name`, `email`, `message`) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $name, $email, $message);
+
+    if ($stmt->execute()) {
+        echo '<script>
+            Swal.fire({
+                title: "Your message was sent successfully!",
+                text: "Thank you for your message.",
+                icon: "success"
+            });
+        </script>';
+    } else {
+        echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Your message was not sent."
+            });
+        </script>';
+    }
+
+    $stmt->close();
+}
+?>
+
     <section id="contact">
         <h1>Contact US</h1>
         <div class="container">
@@ -204,8 +218,8 @@ if (isset($_POST['submit'])) {
                     Our company provide all farming service such as Market Place to sell goods,<br>Rental Equipment
                     service,Real Time Communication for Farmers,EMI Calculator,etc.
                 </div> 
-                <a href="#"><i class="ri-whatsapp-line"></i></a>
-                <a href="#"><i class="ri-telegram-2-line"></i></a>
+                <a href="https://chat.whatsapp.com/CqnsUJ9VogY8bk7dYT7CEK"><i class="ri-whatsapp-line"></i></a>
+                <a href="https://t.me/krushimanch_info"><i class="ri-telegram-2-line"></i></a>
                 <a href="#"><i class="ri-facebook-fill"></i></a>
                 <a href="#"><i class="ri-instagram-line"></i></a>
                 <a href="#"><i class="ri-twitter-x-line"></i></a>
@@ -215,23 +229,7 @@ if (isset($_POST['submit'])) {
         </div>
     </footer>
     <!-- Close Footer -->
-<?php 
- if ($result) {
-      echo '<script>
-        Swal.fire({
-            title: "Your message sent successfully",
-            text: "thank you for message",
-            icon: "success"
-            }) </script>';
-   } else {
-      echo '<script>
-            Swal.fire({
-                icon: "error",
-                title: "Error!",
-                text: "Your message not sent",
-                }) </script>';
-   }
-?>
+
 </body>
 
 <script>
