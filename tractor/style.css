@@ -160,12 +160,13 @@ h1 {
     width: 6rem;
     height: 1.5rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
 .service-card h3 {
     margin: 10px 0;
-    color: #00796B;
+    color: var(--bg-color);
 }
 
 .service-card p {

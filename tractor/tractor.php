@@ -52,6 +52,7 @@ $result = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($result)) {
     $vehicleName = htmlspecialchars($row['vehicle-name']);
+    $id = $row['Id']; 
     ?>
     
     <div class="service-card">
@@ -64,10 +65,15 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </div>
         <h3><?php echo $vehicleName; ?></h3>
-        <a href="/Rental service/tractor/tractor details/index.html"><button>More details</button></a>
+
+        <!-- Pass ID to details page -->
+        <a href="../tractor details/index.php?id=<?php echo $id; ?>">
+            <button>More details</button>
+        </a>
     </div>
 
 <?php } ?>
+
 </div>
 </section>
     <!-- close Service Page -->
